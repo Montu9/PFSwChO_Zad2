@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-a-svc
+  namespace: appns-a
+spec:
+  selector:
+    app: app-a
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-b-svc
+  namespace: appns-b
+spec:
+  selector:
+    app: app-b
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: default-backend-svc
+  namespace: default
+spec:
+  selector:
+    app: default-backend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-a-proxy
+  namespace: default
+spec:
+  type: ExternalName
+  externalName: app-a-svc.appns-a.svc.cluster.local
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-b-proxy
+  namespace: default
+spec:
+  type: ExternalName
+  externalName: app-b-svc.appns-b.svc.cluster.local
