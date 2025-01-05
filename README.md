@@ -32,11 +32,11 @@ Default Backend to specjalna usługa obsługująca żądania, które nie trafiaj
 - Zapewnia podstawową obsługę żądań, które nie są kierowane do konkretnej aplikacji
 
 ### 5. Wdrożenie
-Włączenie kontrolera Ingress w Minikube: minikube addons enable ingress
-Utworzenie przestrzeni nazw: kubectl apply -f namespaces.yaml
-Wdrożenie aplikacji i usług: kubectl apply -f deployments.yaml
-Zastosowanie polityk sieciowych: kubectl apply -f network-policies.yaml
-Konfiguracja Ingress: kubectl apply -f ingress.yaml
-Uruchomienie tunelu Minikube: minikube tunnel
+- Włączenie kontrolera Ingress w Minikube: minikube addons enable ingress
+- Utworzenie przestrzeni nazw: kubectl apply -f namespaces.yaml
+- Wdrożenie aplikacji i usług: kubectl apply -f deployments.yaml
+- Zastosowanie polityk sieciowych: kubectl apply -f network-policies.yaml
+- Konfiguracja Ingress: kubectl apply -f ingress.yaml
+- Uruchomienie tunelu Minikube: minikube tunnel
 
 
